@@ -8,7 +8,7 @@ public class Transaction {
 	private Date txDate;
 	private String explanation;
 
-	private TransactionJSONSerializer transactionJSONSerializer;
+	private TransactionSerializer transactionSerializer;
 	
 	public long getId() {
 		return id;
@@ -47,7 +47,7 @@ public class Transaction {
 
 
 	public String toJSON() {
-		return transactionJSONSerializer.parse(this);
+		return transactionSerializer.parse(this);
 	}
 	
 }
