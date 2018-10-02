@@ -4,7 +4,7 @@ public class AccountService {
 	
 	private NotificationService notificationService;
 	
-	public void notifyBalanceChange(int activeNotificationSystem) {
+	public void notifyBalanceChange() {
 		
 		notificationService.sendNotification();
 		
