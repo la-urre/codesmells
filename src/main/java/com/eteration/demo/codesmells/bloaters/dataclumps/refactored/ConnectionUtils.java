@@ -6,6 +6,9 @@ import java.sql.SQLException;
 
 public class ConnectionUtils {
 	
+	private ConnectionUtils() {
+	}
+	
 	public static Connection getConnection() throws SQLException {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
