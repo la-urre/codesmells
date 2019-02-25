@@ -1,12 +1,13 @@
 package com.eteration.demo.codesmells.dispensables.comments.refactored;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class AccountManager {
-	/*Created standart account with minimum required data and returns new accountId
+	/*Created default account with minimum  required fieldss
 	 */
 	public long createBasicAccount(String customerName,Date birhdate,int branchCode) {
-		long createdAccountId = 80201002;
+		long createdAccountId = UUID.randomUUID().getMostSignificantBits();
 		
 		return createdAccountId;
 	}
