@@ -25,8 +25,8 @@ public class AccountService {
 	private static final Logger LOGGER = Logger.getLogger(AccountService.class.getName());
 
 	public void processDailyPaymentOrders() {
-		List<String> records = processTranscationFile();
-		List<TransactionRecord> txRecords = parseTransctionRecords(records);
+		List<String> records = processTransactionFile();
+		List<TransactionRecord> txRecords = parseTransactionRecords(records);
 		processTransactions(txRecords);
 	}
 
@@ -57,7 +57,7 @@ public class AccountService {
 
 		try {
 			if(conn != null) {
-			conn.rollback();
+				conn.rollback();
 			}
 		} catch (SQLException e1) {
 			LOGGER.log(Level.SEVERE, "Rollback error", e1);
@@ -85,7 +85,7 @@ public class AccountService {
 		return dataSource.getConnection();
 	}
 
-	private List<TransactionRecord> parseTransctionRecords(List<String> records) {
+	private List<TransactionRecord> parseTransactionRecords(List<String> records) {
 		List<TransactionRecord> txRecords = new ArrayList<>();
 
 		for (String txRecordItem : records) {
@@ -101,7 +101,7 @@ public class AccountService {
 		return txRecords;
 	}
 
-	private List<String> processTranscationFile() {
+	private List<String> processTransactionFile() {
 		String transactionFileName = "transactions.txt";
 		BufferedReader reader = null;
 		List<String> records = new ArrayList<>();

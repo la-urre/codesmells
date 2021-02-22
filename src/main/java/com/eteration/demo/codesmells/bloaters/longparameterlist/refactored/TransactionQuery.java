@@ -2,7 +2,7 @@ package com.eteration.demo.codesmells.bloaters.longparameterlist.refactored;
 
 import com.eteration.demo.codesmells.bloaters.primitiveobsession.refactored.DateRange;
 
-public class TransacitonQuery {
+public class TransactionQuery {
 	
 	private DateRange interval;
 	private int lastTransactionCountLimit;
